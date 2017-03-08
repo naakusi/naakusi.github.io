@@ -1,0 +1,53 @@
+h1 {
+    color: darkgreen;
+    font-family: "andale mono";
+    font-size: 60px;
+    text-align: center;
+    
+}
+h2 {
+    color: chartreuse;
+    font-family: "andale mono";
+    font-size: 40px;
+    margin-top: -50px;
+    text-align: center;
+}
+#container {
+    background-color: black;
+    margin: 0 auto;
+}
+
+#quote {
+    font-size: 20px;
+    color: chartreuse;
+    font-family: "courier new";
+    padding: 95px;
+    margin-top: -50px;
+    text-align: right;
+}
+
+#list {
+    font-size: 40px;
+    color: darkgreen;
+    font-family: "share-regular";
+    padding: 80px;
+    margin-top: -100px;
+   
+}
+
+#bullets {
+    font-size: 25px;
+    color: chartreuse;
+    font-family: "share-regular";
+    padding: 80px;
+    margin-top: -200px;
+    
+}
+
+#jb {
+    display: block;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+
+}
