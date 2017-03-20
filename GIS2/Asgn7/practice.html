@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+    <head>
+       <title>GIS at GPIA</title>
+        <link rel="stylesheet" href="practiceStyle.css" media="screen"/>
+        <script src="http://use.edgefonts.net/share-regular:n4,i4,n7,i7:all.js"></script>
+        <!-- above is script and link for css and accompanying library -->
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <!-- above is script for jquery library -->
+        
+        
+        <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+        <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
+        <!-- above is link and script for adding carto map to webpage -->
+        
+        <style>
+            .overlay {
+                background: #201F26;
+                font-size: 25px;
+                font-family: "courier new";
+                color: chartreuse;
+                width: 250px;
+                padding: 10px;
+                position: absolute;
+                right: 99px;
+                bottom: -375px;
+                margin-right: 100px;
+                    
+            }
+            
+            #map {
+                height: 700px;
+                width: 48%;
+                padding: 200px;
+                margin-top: -150px;
+                margin-left: 400px;
+                      
+            }
+            
+            .buttons {
+                position: absolute;
+                top: 275px;
+                right: 45px;
+                    
+        </style>
+        
+    </head>
+    <body>
+        
+        
+        <div id="container">
+            <h1 style = font-size: 50px;>Location   Location   Location</h1>
+            <h2>Tracking Agent 007</h2>
+            
+            <div id="map"></div>
+            <div class="buttons">
+                <button class="multiple-visits">Countries Visited More than 5x</button>
+                <button class="multiple-visits2">Countries Visited Less than 5x</button>
+                <button class="reset">Reset</button>
+            </div>
+            
+            
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3o6cZPlTQhId922bogz7rGWcI2rOHCg4orVafvd0RsP8_yj8c4A" id = "jb"/>
+        
+        <div id="quote"></div>
+        <p id="quote">"James Bond has understood the art of travel. The agent embraces the coziness of some of the worlds most luxurious hotels – likewise he enjoys simple backpacker delights on a hidden sunlit cove. Sometimes he travels with the Orient-Express, sometimes he even goes by camel." - <a href="http://huntingbond.com/the-james-bond-movie-locations/">huntingbond.com</a>
+        </p>
+        <div id="list"></div>    
+        <p id="list"><strong>Continents Visited</strong>
+            <div id="bullets"></div>
+                <ul id="bullets">
+                    <li>Africa</li>
+                    <li>Asia</li>
+                    <li>Europe</li>
+                    <li>North America</li>
+                    <li>South America</li>
+            </ul>
+        </p>
+        <div class="overlay">
+            <p> Find more 007 trivia at <a href="http://samvickars.is/allaboutthatbond" style="font-size: 20px;">All About That Bond</a>
+            </p>
+        </div>
+        <script>
+            var visitedLayer;
+            $(document).ready(function () {
+                cartodb.createVis('map', 'https://thenewschool.carto.com/u/n-ama-k/api/v2/viz/eb2fa9ae-fc7a-11e6-a629-0ecd1babdde5/viz.json', {
+                    zoom: 2
+                })
+                    .done(function(vis, layers) {
+                        visitedLayer = layers[1].getSubLayer(1);
+                });
+                
+            $('.multiple-visits').click(function () {
+                visitedLayer.setSQL("SELECT * from mostvisitedcountries WHERE visited >=5");
+            });
+            $('.multiple-visits2').click(function () {
+                visitedLayer.setSQL("SELECT * from mostvisitedcountries WHERE visited <= 5");
+            });
+            $('.reset').click(function () {
+                visitedLayer.setSQL("SELECT * FROM table_007_locations");
+            });
+            });
+        </script>
+    </body>
+</html>
