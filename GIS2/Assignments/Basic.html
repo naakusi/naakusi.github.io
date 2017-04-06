@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <!-- above is script for jquery library -->
+        
+        
+        <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+        <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
+
+        <style>
+            #map {
+                height: 600px;
+                position: absolute;
+                width: 75%;
+                padding: 100px;
+                margin-right: 400px;
+                      
+            }
+            
+            .type-picker {
+                position: absolute;
+                top: 275px;
+                right: 250px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+        
+        <select class="type-picker">
+                <option value = "all">ALL</option>
+                <option value = "sean">Sean Connery</option>
+                <option value = "george">George Lazenby</option>
+                <option value = "roger">Roger Moore</option>
+                <option value = "timothy">Timothy Dalton</option>
+                <option value = "pierce">Pierce Brosnan</option>
+                <option value = "daniel">Daniel Craig</option>
+        </select>
+        
+        <script>
+            var actorLayer;
+            
+            $(document).ready(function() {
+                cartodb.createVis('map', 'https://thenewschool.carto.com/u/n-ama-k/api/v2/viz/eb436574-93d1-4d1a-9180-2f7cd2d1bbb3/viz.json', {
+                    zoom: 2
+                })
+                    .done(function(vis, layers) {
+                        actorLayer = layers[1].getSubLayer(1);
+                });
+                    $('.type-picker').change(function() {
+                    var type = $(this).val();
+                    var sql;
+                    if (type === 'all') {
+                    sql = "SELECT * FROM table_007_locations";
+                    }
+                        else if (type === 'sean') {
+                            sql = ("SELECT * FROM table_007_locations WHERE actor = 'Sean Connery'")
+                        }
+                        else if (type === 'george') {
+                            sql = ("SELECT * FROM table_007_locations WHERE actor = 'George Lazenby'")
+                        }
+                        else if (type === 'roger') {
+                            sql = ("SELECT * FROM table_007_locations WHERE actor = 'Roger Moore'")
+                        }
+                        else if (type === 'timothy') {
+                            sql = ("SELECT * FROM table_007_locations WHERE actor = 'Timothy Dalton'")
+                        }
+                        else if (type === 'pierce') {
+                            sql = ("SELECT * FROM table_007_locations WHERE actor = 'Pierce Brosnan'")
+                        }
+                        else if (type === 'daniel') {
+                            sql = ("SELECT * FROM table_007_locations WHERE actor = 'Daniel Craig'")
+                        }
+                    else {
+                    sql = "SELECT * FROM table_007_locations WHERE actor = '" + type + "'";
+                    }
+                    actorLayer.setSQL(sql)
+                                });
+
+
+                
+            });
+        </script>
+    </body>
+</html>
