@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <!-- above is script for jquery library -->
+        
+        
+        <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+        <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
+
+        <style>
+            #map {
+                height: 100%;
+                position: absolute;
+                width: 100%;
+                      
+            }
+        
+            
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+        
+        <div class="cartodb-legend color">
+        <div class="legend-title">007 Locations</div>
+        <ul class="legend-list">
+            <li><div class="bullet" style="background-color: #01b51f;"></div> Visited Only Once</li>
+            <li><div class="bullet" style="background-color: #038dc4;"></div> Visited More Than Once</li>
+        </ul>
+    </div>
+
+        <script>
+            var actorLayer;
+            
+            $(document).ready(function() {
+                cartodb.createVis('map', 'https://thenewschool.carto.com/u/n-ama-k/api/v2/viz/ede1a004-36d3-4cb6-bcce-af9be0cc815c/viz.json', {
+                    zoom: 3
+                })
+                
+                    
+
+
+            
+            });
+        </script>
+    </body>
+</html>
