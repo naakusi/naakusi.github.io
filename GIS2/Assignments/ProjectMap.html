@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <!-- above is script for jquery library -->
+        
+        
+        <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+        <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
+
+        <style>
+            #map {
+                height: 80%;
+                position: absolute;
+                width: 50%;
+                      
+            }
+            
+            #map2 {
+                height: 80%;
+                position: absolute;
+                width: 50%;
+                margin-left: 725px;
+            }
+            
+            #title {
+                height: 50px;
+                position: absolute;
+                width: 80px;
+                margin-left: 115px;
+                margin-top: 25px;
+                background: #fcfcfc;
+                text-align:center;
+                font-size: 25px;
+            }
+            
+            #title2 {
+                height: 50px;
+                position: absolute;
+                width: 80px;
+                margin-left: 850px;
+                margin-top: 25px;
+                background: #fcfcfc;
+                text-align:center;
+                font-size: 25px;  
+            }
+
+                     
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+        <div id="map2"></div>
+        <div id="title">2000</div>
+        <div id="title2">2015</div>
+        
+        <div class="cartodb-legend color" style="margin-right: 400px;">
+        <div class="legend-title">Democracy Ranking</div>
+        <ul class="legend-list">
+            <li><div class="bullet" style="background-color: #01b51f;"></div>High</li>
+            <li><div class="bullet" style="background-color: #f4f142;"></div>Medium</li>
+            <li><div class="bullet" style="background-color: #f70931;"></div>Low</li>
+        </ul>
+        <p></p>
+        <div class="legend-title">Military Spending as Percent of GDP</div>
+        <ul class="legend-list">
+            <li><div class="bullet" style="background-color: #edeaea;"></div>0 - 1.5</li>
+            <li><div class="bullet" style="background-color: #ccccce;"></div>1.6 - 2.5</li>
+            <li><div class="bullet" style="background-color: #969696;"></div>2.6 - 3.5</li>
+            <li><div class="bullet" style="background-color: #333333;"></div>3.6 - 5.0</li>
+        </ul> 
+        </div>
+        
+        <script>
+            
+            $(document).ready(function() {
+                cartodb.createVis('map', 'https://thenewschool.carto.com/u/n-ama-k/api/v2/viz/854a5bb3-9074-4fea-bb33-263c6e0b1d06/viz.json', {
+                    zoom: 2
+                })
+
+            });
+        </script>
+        
+        <script>
+            
+            $(document).ready(function() {
+                cartodb.createVis('map2', 'https://thenewschool.carto.com/u/n-ama-k/api/v2/viz/97589210-fe3c-4387-b943-3e295d8ce39c/viz.json', {
+                    zoom: 2
+                })
+
+            });
+        </script>
+
+        
+        
+    </body>
+</html>
