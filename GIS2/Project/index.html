@@ -16,6 +16,10 @@
         <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" />
         <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
         
+        <!--Google font-->
+            <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Share Tech">
+        
  <!--Bootstrap links-->
            <!-- Latest compiled and misnified CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -38,6 +42,11 @@
                 bottom: 0;
                 width: 72%;
                 height: 100%;
+            }
+            
+            body {
+        font-family: 'Share Tech', sans-serif;
+        font-size: ;
             }
             
             .sidepanel {
@@ -93,9 +102,18 @@
             .footer {
                 padding: 4px 30px 0 30px;
             }
-            .accordian {}
-            .accordian-toggle {}
-            .accordian-content {}
+            .accordian {
+                cursor: pointer;
+            }
+            .accordian-toggle {
+                display:inline-block;
+                padding-left: 20px;
+                padding-right: 20px;
+                line-height: 15px;
+            }
+            .accordian-content {
+                display: block;
+            }
             .dropdown {
                 font-size: 12px;
             }
@@ -122,13 +140,19 @@
                     <br>
                     <p style="font-size: 18px;">--M, Skyfall 2012</p>
                     </p>
-                  <br><br>
+                  <br>
                 <p style="font-style: italic;font-size: 18px; color: #363642">"There are known knowns, things we know that we know; and there are known unknowns, things that we know we don't know. But there are also unknown unknowns, things we do not know we don't know."
                     </p>
                     <p style="font-size: 18px;">--Donald Rumsfeld, US Secretary of Defense 2001-2006</p>
                  <br>
+       
+                <div class="accordian">
+            <p class="accordian-toggle" style="font-style: italic; color: blue;">...Hide/Show details...</p>
+                    
+             <div class="accordian-content">
+                 
                 <center><h3>Mapping Fiction and Real Life</h3></center>
-               
+                
                 <p style="font-size: 20px; color: #363642;">The idea behind this map is to explore the geopolitical themes featured in the James Bond movie franchise. This project limits its scope to the most recent films produced between 2006 and 2015. Movie themes include; terrorism, corporatism, cyber warfare, and surveillance.
                 <br><br>
                 One of the challenges in assembling this map is that the countries featured in the movies, for the most part, only serve as scenic backdrops. There isn't any real engagement with political issues of the state. The movies' antagonists do not have political allegiances to any particular nation state. They are rogue individuals working in the shadows to push their own nefarious agendas.
@@ -140,9 +164,16 @@
                         <li>Surveillance Industry Index (2016), Transparency Toolkit</li>
                     </ul>
                 </p>
-                
+
                 <br>
+
+            <!--accordian-content end-->
                 </div>
+        
+            <!--accordian end-->
+            </div>
+                <!--intro end-->
+        </div>
                 
  <!--Map selection options-->
         <div class = "trivia">
@@ -232,19 +263,21 @@
         </div>
             
 <!--end credits-->
-            <div class="footer">
-            <div class="accordian">
-                <!--about
-                <h3 class="accordian-toggle">About>></h3>
-                <div class="accordian-content">
-                    <p>
-                      Creator and purpose
-                    </p>
-                <!--accordian-content div for About end-->
-                </div>
-                <h3 class="accordian-toggle">Sources>></h3>
-                <div class="accordian-content">
-                    <p></p>
+    <div class="footer">
+                
+    <div class="accordian">
+        
+        <h3 class="accordian-toggle">About>></h3>
+            <div class="accordian-content">
+              <p>
+                Creator and purpose
+              </p>
+            </div>
+<br>
+                
+        <h3 class="accordian-toggle">Data Sources>></h3>
+            <div class="accordian-content">
+             <p></p>
                     <ul style="list-style-type:hyphen">
                         <li>
                             <a href="http://jamesbond.wikia.com/">007 Wiki</a>
@@ -258,18 +291,27 @@
                         <li>
                             <a href="https://sii.transparencytoolkit.org">Surveillance Industry Index</a>
                         </li>
+                        <li>
+                            <a href="http://opendata.arcgis.com/">Country Boundaries: Esri.org</a>
+                        </li>
                     </ul>
                 <!--accordian-content div for Sources end-->
                 </div>
-                <h3 class="accordian-toggle">Methodology>></h3>
-                <div class="accordian-content">
-                    <p>
-                    </p>
+        <br>
+                
+        <h3 class="accordian-toggle">Methodology>></h3>
+            <div class="accordian-content">
+              <p>
+                  Methodology details
+              </p>
                 <br>
-                </div>
+            </div>
+                
+                <!--accordian-content div end-->
+                </div>     
             <!--accordian div end-->
             </div>
-  <!--sidepanel div end-->              
+  <!--footer div end-->              
  </div>
 
         </div>
@@ -280,8 +322,8 @@
             <a href="#close" class="cartodb-popup-close-button close">x</a>
             <div class="cartodb-popup-content-wrapper">
               <div class="cartodb-popup-content">
-                <div>{{movie}}</div>
                 <div>{{occupation}}</div>
+                <div>{{cod}}</div>
                 <div>{{movie}}</div>
                 <img style="width: 100%;" src="{{image_url}}" />
               </div>
@@ -297,6 +339,7 @@
             var terrorLayer;
             var survlLayer;
             var cybrLayer;
+           
             
             $(document).ready(function () {
                 cartodb.createVis('map', 'https://thenewschool.carto.com/u/n-ama-k/api/v2/viz/cbc768a7-c8d4-4d27-8a27-3351fff77de5/viz.json', {
@@ -306,14 +349,14 @@
                     .done(function(vis, layers) {
                         allLayer = layers[1].getSubLayer(0);
                         villiansLayer = layers[1].getSubLayer(1);
-                            // Add the custom template for the popups
-                            var popupTemplate = $('#tooltip_template').html();
-                            villiansLayer.infowindow.set('template_type', 'mustache');
-                            villiansLayer.infowindow.set('template', popupTemplate);
                         moviesLayer = layers[1].getSubLayer(2);
                         terrorLayer = layers[1].getSubLayer(3);
                         cybrLayer = layers[1].getSubLayer(4);
                         survlLayer = layers[1].getSubLayer(5);
+                    
+                    var popupTemplate = '<div class="cartodb-popup v2"> <a href="#close" class="cartodb-popup-close-button close">x</a>  <div class="cartodb-popup-content-wrapper">  <div class="cartodb-popup-content"> {{occupation}}:{{cod}}:{{movie}}</div>  </div>  <div class="cartodb-popup-tip-container"></div> </div>';
+                        villiansLayer.infowindow.set('template_type', 'mustache');
+                        villiansLayer.infowindow.set('template', popupTemplate);
                        
                     
                 });
@@ -429,8 +472,20 @@
                 $('.clear3').click(function() {
                     survlLayer.setSQL("SELECT * FROM collected_data_test2_ii WHERE survlstatus = null");
                 });
-
+//$document map layer end//
             });
+            
+            
+    $(document).ready(function($) {
+        $('.accordian').find('.accordian-toggle').click(function() {
+                    //expand or collapse//
+             $(this).next().slideToggle('slow');
+                    //hide other panels//
+             $(".accordian-content").not($(this).next()).slideUp('slow');
+                });
+            });
+            
+            
 
         </script>
         <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
