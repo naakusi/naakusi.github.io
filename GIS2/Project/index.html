@@ -17,8 +17,8 @@
         <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
         
         <!--Google font-->
-            <link rel="stylesheet" type="text/css"
-          href="https://fonts.googleapis.com/css?family=share">
+        <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Share">
         
  <!--Bootstrap links-->
            <!-- Latest compiled and misnified CSS -->
@@ -46,6 +46,7 @@
             
             body {
                 font-family: share, sans-serif;
+                
             }
             
             .sidepanel {
@@ -77,6 +78,7 @@
                 border-bottom: 4px solid #161444;
                 
             }
+            
             .l_image {
                 position: relative;
                 display: block;
@@ -84,8 +86,14 @@
                 left: auto;
                 top: 100px;
             }
-            .radiobutton {}
-            .radiobutton2 {}
+            .radiobutton {
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .radiobutton2 {
+                font-size: 16px;
+                font-weight: bold;
+            }
             .geopolitics {
                 border-bottom: 4px double #161444;
             }
@@ -96,7 +104,8 @@
                 
             }
             .buttons2 {
-                
+                font-size: 14px;
+                font-weight: bold;
             }
             .footer {
                 padding: 4px 30px 0 30px;
@@ -112,13 +121,18 @@
             }
             .accordian-content {
                 display: block;
+    
             }
+            .accordian2 {}
+            .accordian-toggle2 {}
+            .accordian-content {}
             .dropdown {
-                font-size: 12px;
+                font-size: 14px;
             }
             .checkbox-container {
                 
             }
+
         </style>
         
 
@@ -132,17 +146,18 @@
         
         <div class = "sidepanel">
             <div class = "wrapper">
-                <h1 style="color: #1c1887; font-weight: bold;">World of Agent 007</h1>
+                <center><h1 style="color: #1c1887; font: share; font-weight: bold;">World of Agent 007</h1></center>
+                <center><h3 style="color: #1c1887; font: share;">2006 - 2015</h3></center>
                 <div class = "intro">
                     <br><br>
-                <p style = "font-style: italic; font-size: 16px; color: #363642;">"Our enemies are no longer known to us. They do not exist on a map. They're not nations, they're individuals. And look around you. Who do you fear? Can you see a face, a uniform, a flag? No! Our world is not more transparent now, it's more opaque! It's in the shadows. That's where we must do battle."
+                <p style = "font-style: italic; font-size: 18px; color: #363642;">"Our enemies are no longer known to us. They do not exist on a map. They're not nations, they're individuals. And look around you. Who do you fear? Can you see a face, a uniform, a flag? No! Our world is not more transparent now, it's more opaque! It's in the shadows. That's where we must do battle."
                     <br>
-                    <p style="font-size: 15px;">--M, Skyfall 2012</p>
+                    <p style="font-size: 18px;">--M, Skyfall 2012</p>
                     </p>
                   <br>
-                <p style="font-style: italic;font-size: 16px; color: #363642">"There are known knowns, things we know that we know; and there are known unknowns, things that we know we don't know. But there are also unknown unknowns, things we do not know we don't know."
+                <p style="font-style: italic;font-size: 18px; color: #363642">"There are known knowns, things we know that we know; and there are known unknowns, things that we know we don't know. But there are also unknown unknowns, things we do not know we don't know."
                     </p>
-                    <p style="font-size: 15px;">--Donald Rumsfeld, US Secretary of Defense 2001-2006</p>
+                    <p style="font-size: 18px;">--Donald Rumsfeld, US Secretary of Defense 2001-2006</p>
                  <br>
        
                 <div class="accordian">
@@ -150,14 +165,14 @@
                     
              <div class="accordian-content">
                  
-                <center><h3 style = "font-weight: bold;">Mapping Fiction and Real Life</h3></center>
+                <center><h3 style="font-weight: bold;">Mapping Fiction and Real Life</h3></center>
                 
-                <p style="font-size: 16px; color: #363642;">The idea behind this map is to explore the geopolitical themes featured in the James Bond movie franchise. This project limits its scope to the most recent films produced between 2006 and 2015. Movie themes include; terrorism, corporatism, cyber warfare, and surveillance.
+                <p style="font-size: 20px; color: #363642;">The idea behind this map is to explore the geopolitical themes featured in the James Bond movie franchise. This project limits its scope to the most recent films produced between 2006 and 2015. Movie themes include; terrorism, corporatism, cyber warfare, and surveillance.
                 <br><br>
                 One of the challenges in assembling this map is that the countries featured in the movies, for the most part, only serve as scenic backdrops. There isn't any real engagement with political issues of the state. The movies' antagonists do not have political allegiances to any particular nation state. They are rogue individuals working in the shadows to push their own nefarious agendas.
                 <br><br> 
-                For the purpose of this project, the countries featured in the 2006-2015 Bond movie franchise and highlighted here, serve as a sort of primary filter to explore geopolitics relating to terrorism, cyber warfare, and surveillance. Data used for this map are based on the following indexes:
-                    <ul style="font-size: 14px;">
+                For the purpose of this project, the countries featured in this project map are used as points of reference to explore geopolitics relating to terrorism, cyber warfare, and surveillance. Data used for this map are based on the following indexes:
+                    <ul style="font-size: 18px;">
                         <li>Global Terrorism Index (2015), Institute for Economics and Peace</li>
                         <li>Global Cybersecurity Index (2015), International Telecommunications Union</li>
                         <li>Surveillance Industry Index (2016), Transparency Toolkit</li>
@@ -177,76 +192,84 @@
  <!--Map selection options-->
         <div class = "trivia">
             <h2 style="color: #990714;">Movie Trivia</h2>
+            <p style="color: gray;">Check out the countries featured in the 2006-2015 James Bond movie franchise and where each villain come from</p>
             
  <!--dropdown movie options-->
-            <h3 style = "font-size: 18px;">Countries by Movie</h3>
+            <h3 style="color: #1c1887;">Countries by Movie</h3>
     <form>
         <select class = "dropdown">
-            <option value = "all">All</option>
+            <option value="pick">Pick a Movie</option>
+            
             <option value = "casino">Casino Royale</option>
             <option value = "quantum">Quantum of Solace</option>
             <option value = "skyfall">Skyfall</option>
             <option value = "spectre">Spectre</option>
             <option value = "clear">Clear</option>
+            <option value = "all">All</option>
         </select>
     </form>
             <br>
         
-            <h3 style = "font-size: 18px;">Birthplace of a Villian</h3>
+            <h3 style="color: #1c1887;">Birthplace of a Villian</h3>
  <!--villians buttons-->
             <div class = "buttons">
                 <button class="lechfr">Le Chiffre</button>
-                <br><br>
+                
                 <button class="dgreene">Dominic Greene</button>
-                <br><br>
+                
                 <button class="rsilva">Raoul Silva</button>
                 <br><br>
                 <button class="mdenbigh">Max Denbigh</button>
-                <br><br>
+                
                 <button class="esblof">Ernst S. Blofeld</button>
                 <br><br>
                 <button class="reset">ALL</button>
-                <br><br>
+                
                 <button class="clear">CLEAR</button>
                 <br><br>
             </div>
 
         <!--trivia div end-->
         </div>
-        <br>
+     
                 
  <!--geopolitics section-->       
         <div class="geopolitics">
             <h2 style="color: #990714;">Geopolitics</h2>
             
  <!--TI radio options-->
-            <h3 style = "font-size: 18px; font-weight: bold;">Terrorism Impact</h3>
+            <h3 style="color: #1c1887;">Terrorism Impact</h3>
+            <p style="color: gray;">A snapshot of the degree of impact on countries affected by terrorism</p>
             
            <div class="radiobutton">
              <form id = "rdbtn2">
-               <input type="radio" name="trank" value="low">Low</input>
-               <input type="radio" name="trank" value="medium">Medium</input>
-               <input type="radio" name="trank" value="high">High</input>
+               <input type="radio" name="trank" value="low">LOW</input>
+               <input type="radio" name="trank" value="medium">MEDIUM</input>
+               <input type="radio" name="trank" value="high">HIGH</input>
                <input type="radio" name="trank" value="reset1">ALL</input>
     <input type="radio" name="trank" value="clear">CLEAR</input>
             </form>
            </div>
+<p style="color: gray; font-style: italic;">Note: filters recategorize impact indexes based on which countries they are grouped with</p>
 
 <!--CS radio options-->
-             <h3 style = "font-size: 18px; font-weight: bold;">Cyber Security</h3>
+             <h3 style="color: #1c1887;">Cyber Security</h3>
+             <p style="color: gray;">A snapshot of cyber security readiness  - i.e -  the existence of national structures in place to implement and promote cybersecurity</p>
 <div class="radiobutton2">
   <form id="rdbtn2">
-    <input type="radio" name="crank" value="low">Low</input>
-    <input type="radio" name="crank" value="medium">Medium</input>
-    <input type="radio" name="crank" value="high">High</input>
+    <input type="radio" name="crank" value="low">LOW</input>
+    <input type="radio" name="crank" value="medium">MEDIUM</input>
+    <input type="radio" name="crank" value="high">HIGH</input>
     <input type="radio" name="crank" value="reset2">ALL</input>
 <input type="radio" name="crank" value="clear">CLEAR</input>
   </form>       
 </div>
+<p style="color: gray; font-style: italic;">Note: filters recategorize security indexes based on which countries they are grouped with</p>
 
             
 <!--surveillance button options--> 
-            <h3 style = "font-size: 18px; font-weight: bold;">Surveillance Technology</h3>
+            <h3 style="color: #1c1887;">Surveillance Technology</h3>
+            <p style="color: gray;">General geolocations of private surveillance/security firms and the national governments that purchase their technology</p>
            <div class = "buttons2">
                 <button class="suppliers">Suppliers</button>
                 <button class="buyers">Buyers</button>
@@ -266,15 +289,15 @@
                 
     <div class="accordian">
         
-        <h3 class="accordian-toggle" style = "font-size: 20px;">About>></h3>
+        <h4 class="accordian-toggle">About>></h4>
             <div class="accordian-content">
               <p>
-                Creator and purpose
+                The aim of this project was to create a fun map based on a work of fiction. The character of James Bond was chosen, not only because of his many globetrotting adventures, but because the Bond movies also touch on geopolitical themes. <br>This project focuses mainly on the Bond films produced between 2006 and 2015 as their geopolitical themes would more likely reflect current events. <br>The themes for the more recent films revolved around; terrorism, corporatism, cyber warfare, and surveillance.
               </p>
             </div>
 <br>
                 
-        <h3 class="accordian-toggle" style = "font-size: 20px;">Data Sources>></h3>
+        <h4 class="accordian-toggle">Data Sources>></h4>
             <div class="accordian-content">
              <p></p>
                     <ul style="list-style-type:hyphen">
@@ -298,12 +321,28 @@
                 </div>
         <br>
                 
-        <h3 class="accordian-toggle" style = "font-size: 20px;">Methodology>></h3>
+        <h4 class="accordian-toggle">Methodology>></h4>
             <div class="accordian-content">
               <p>
-                  Methodology details
+                  Map:
+                  <ul>
+                      <li>Components are polygon features sourced from world countries boundary shapefile from Esri.org
+                      </li>
+                      <li>Columns were added to the boundary map table to include movie and geopolitical data</li>
+                      <li>The map contains six layers, one for each map filter, including a layer that contains no visualizations which serves as a preliminary clear filter</li>
+                </ul>
+                Webpage:
+                <ul>
+                    <li>Template used: <a href = https://github.com/CartoDB/cartodb-publishing-templates>CARTODB Publishing template </a></li>
+                    <li>A screenshot of the map legend was taken from CARTO and placed in an HTML div for the map web page (which works as long as visualizations remain static)</li>
+                    <li>Structure, styling, and interactivity are based on HTML, CSS, JavaScript, and JQuery coding language</li>
+                </ul>
+                Issue(s):
+                <ul>
+                    <li>Coding for pop-up info windows are included for the "villians" layer but do not appear when villian geolocations are clicked on</li>
+                </ul>
               </p>
-                <br>
+                
             </div>
                 
                 <!--accordian-content div end-->
@@ -312,15 +351,18 @@
             </div>
   <!--footer div end-->              
  </div>
-
+<br><br>
         </div>
         
   <!--JavaJQuery-->
+
+<!--popup image script-->
         <script type="template/html" id="tooltip_template">
-          <div class="cartodb-popup v2">
+        <div class="cartodb-popup v2">
             <a href="#close" class="cartodb-popup-close-button close">x</a>
             <div class="cartodb-popup-content-wrapper">
               <div class="cartodb-popup-content">
+                <div>{{image_url}}</div>
                 <div>{{occupation}}</div>
                 <div>{{cod}}</div>
                 <div>{{movie}}</div>
@@ -338,11 +380,13 @@
             var terrorLayer;
             var survlLayer;
             var cybrLayer;
+            var popupTemplate;
            
             
             $(document).ready(function () {
                 cartodb.createVis('map', 'https://thenewschool.carto.com/u/n-ama-k/api/v2/viz/cbc768a7-c8d4-4d27-8a27-3351fff77de5/viz.json', {
                     zoom: 2
+                
                 })
     
                     .done(function(vis, layers) {
@@ -352,12 +396,19 @@
                         terrorLayer = layers[1].getSubLayer(3);
                         cybrLayer = layers[1].getSubLayer(4);
                         survlLayer = layers[1].getSubLayer(5);
-                    
-                    var popupTemplate = '<div class="cartodb-popup v2"> <a href="#close" class="cartodb-popup-close-button close">x</a>  <div class="cartodb-popup-content-wrapper">  <div class="cartodb-popup-content"> {{occupation}}:{{cod}}:{{movie}}</div>  </div>  <div class="cartodb-popup-tip-container"></div> </div>';
-                        villiansLayer.infowindow.set('template_type', 'mustache');
-                        villiansLayer.infowindow.set('template', popupTemplate);
-                       
-                    
+                    allLayer.show();
+                    villiansLayer.hide();
+                    moviesLayer.hide();
+                    terrorLayer.hide();
+                    cybrLayer.hide();
+                    survlLayer.hide();
+
+   
+        // EB added quotation marks here
+        var popupTemplate = '<div class="cartodb-popup v2"> <a href="#close" class="cartodb-popup-close-button close">x</a>  <div class="cartodb-popup-content-wrapper">  <div class="cartodb-popup-content"> {{image_url}}{{occupation}}{{cod}}{{movie}}</div>  </div>  <div class="cartodb-popup-tip-container"></div> </div>';
+                    villiansLayer.infowindow.set('template_type', 'mustache');
+                    villiansLayer.infowindow.set('template', popupTemplate);
+                             
                 });
 
 
@@ -368,46 +419,63 @@
                     var sql;
                     if (type === 'all') {
                     sql = "SELECT * FROM select_countries_addvillians";
+                        moviesLayer.setSQL(sql);
+                        moviesLayer.show();
                     }
                         else if (type === 'casino') {
                             sql = ("SELECT * FROM select_countries_addvillians WHERE movie = 'Casino Royale'")
+                            moviesLayer.setSQL(sql);
+                            moviesLayer.show();
                         }
                         else if (type === 'quantum') {
                             sql = ("SELECT * FROM select_countries_addvillians WHERE movie = 'Quantum of Solace'")
+                            moviesLayer.setSQL(sql);
+                            moviesLayer.show();
                         } 
                         else if (type === 'skyfall') {
                             sql = ("SELECT * FROM select_countries_addvillians WHERE movie = 'Skyfall'")
+                            moviesLayer.setSQL(sql);
+                            moviesLayer.show();
                         }
                         else if (type === 'spectre') {
                             sql = ("SELECT * FROM select_countries_addvillians WHERE movie = 'Spectre'")
+                            moviesLayer.setSQL(sql);
+                            moviesLayer.show();
                         }
                     else {
-                    sql = "SELECT * FROM select_countries_addvillians WHERE movie = '" + type + "'";   
+                        moviesLayer.hide();
                     }
-                    moviesLayer.setSQL(sql)
+
                         });
    //buttons options for villians//          
 
                 $('.lechfr').click(function() {
                     villiansLayer.setSQL("SELECT * FROM jbvillians WHERE villians = 'Le Chiffre'");
+                    villiansLayer.show();
                 });
                 $('.dgreene').click(function() {
                     villiansLayer.setSQL("SELECT * FROM jbvillians WHERE villians = 'Dominic Greene'");
+                    villiansLayer.show();
                 });
                 $('.rsilva').click(function() {
                     villiansLayer.setSQL("SELECT * FROM jbvillians WHERE villians = 'Raoul Silva'");
+                    villiansLayer.show();
                 });
                 $('.mdenbigh').click(function() {
                     villiansLayer.setSQL("SELECT * FROM jbvillians WHERE villians = 'Max Denbigh'");
+                    villiansLayer.show();
                 });
                 $('.esblof').click(function() {
                     villiansLayer.setSQL("SELECT * FROM jbvillians WHERE villians = 'Ernst Stavros Blofeld'");
+                    villiansLayer.show();
                 });
                 $('.reset').click(function() {
                     villiansLayer.setSQL("SELECT * FROM jbvillians");
+                    villiansLayer.show();
                 });
                 $('.clear').click(function() {
-                    villiansLayer.setSQL("SELECT * FROM jbvillians WHERE villians = null")
+                    villiansLayer.setSQL("SELECT * FROM jbvillians WHERE villians = null");
+                    villiansLayer.hide();
                 });
 
    //terror radio options//
@@ -417,18 +485,28 @@
                     var sql;
                     if(time === 'low') {
                         sql = "SELECT * FROM select_countries_addvillians WHERE tscore2015 >= .0 AND tscore2015 <= 2.207";
+                        terrorLayer.setSQL(sql);
+                        terrorLayer.show();
                     }
                     if(time === 'medium') {
                         sql = "SELECT * FROM select_countries_addvillians WHERE tscore2015 >= 2.444 AND tscore2015 <= 4.894";
+                        terrorLayer.setSQL(sql);
+                        terrorLayer.show();
                     }
                     if(time === 'high') {
                         sql = "SELECT * FROM select_countries_addvillians WHERE tscore2015 >= 5.613 AND tscore2015 <= 9.065";
+                        terrorLayer.setSQL(sql);
+                        terrorLayer.show();
                     }
                     if(time === 'reset1') {
                         sql = "SELECT * FROM select_countries_addvillians";
+                        terrorLayer.setSQL(sql);
+                        terrorLayer.show();
                     }
                     if(time === 'clear') {
                         sql = "SELECT * FROM select_countries_addvillians WHERE tscore2015 = null";
+                        terrorLayer.setSQL(sql);
+                        terrorLayer.hide();
                     }
                     terrorLayer.setSQL(sql);
                     
@@ -441,18 +519,28 @@
                     var sql;
                     if(time === 'low') {
                         sql = "SELECT * FROM select_countries_addvillians WHERE cindex2015 >= 0.059 AND cindex2015 <= 0.441";
+                        cybrLayer.setSQL(sql);
+                        cybrLayer.show();
                     }
                     if(time === 'medium') {
                         sql = "SELECT * FROM select_countries_addvillians WHERE cindex2015 >= 0.5 AND cindex2015 <= 0.588";
+                        cybrLayer.setSQL(sql);
+                        cybrLayer.show();
                     }
                     if(time === 'high') {
                         sql = "SELECT * FROM select_countries_addvillians WHERE cindex2015 >= 0.647 AND cindex2015 <= 0.824";
+                        cybrLayer.setSQL(sql);
+                        cybrLayer.show();
                     }
                     if(time === 'reset2') {
                         sql = "SELECT * FROM select_countries_addvillians";
+                        cybrLayer.setSQL(sql);
+                        cybrLayer.show();
                     }
                     if(time === 'clear') {
                         sql = "SELECT * FROM select_countries_addvillians WHERE cindex2015 = null";
+                        cybrLayer.setSQL(sql);
+                        cybrLayer.hide();
                     }
                     cybrLayer.setSQL(sql);
                     
@@ -461,15 +549,19 @@
   //surveillance cbutton options//
                 $('.suppliers').click(function() {
                     survlLayer.setSQL("SELECT * FROM collected_data_test2_ii WHERE survlstatus = 'Supplier'");
+                    survlLayer.show();
                 });
                 $('.buyers').click(function() {
                     survlLayer.setSQL("SELECT * FROM collected_data_test2_ii WHERE survlstatus = 'Buyer'");
+                    survlLayer.show();
                 });
                 $('.reset3').click(function() {
                     survlLayer.setSQL("SELECT * FROM collected_data_test2_ii");
+                    survlLayer.show();
                 });
                 $('.clear3').click(function() {
                     survlLayer.setSQL("SELECT * FROM collected_data_test2_ii WHERE survlstatus = null");
+                    survlLayer.hide();
                 });
 //$document map layer end//
             });
@@ -484,8 +576,6 @@
                 });
             });
             
-            
-
         </script>
         <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
     </body>
