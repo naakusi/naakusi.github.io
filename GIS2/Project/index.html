@@ -354,7 +354,7 @@
 <br><br>
         </div>
         
-  <!--JavaJQuery-->
+ 
 
 <!--popup image script-->
         <script type="template/html" id="tooltip_template">
@@ -362,7 +362,6 @@
             <a href="#close" class="cartodb-popup-close-button close">x</a>
             <div class="cartodb-popup-content-wrapper">
               <div class="cartodb-popup-content">
-                <div>{{image_url}}</div>
                 <div>{{occupation}}</div>
                 <div>{{cod}}</div>
                 <div>{{movie}}</div>
@@ -373,6 +372,7 @@
           </div>
         </script>
 
+ <!--JavaJQuery-->
         <script>
             var moviesLayer;
             var villiansLayer;
@@ -380,9 +380,7 @@
             var terrorLayer;
             var survlLayer;
             var cybrLayer;
-            var popupTemplate;
            
-            
             $(document).ready(function () {
                 cartodb.createVis('map', 'https://thenewschool.carto.com/u/n-ama-k/api/v2/viz/cbc768a7-c8d4-4d27-8a27-3351fff77de5/viz.json', {
                     zoom: 2,
